@@ -75,7 +75,7 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => (
               <p className="text-gray-300 font-techmono text-xs sm:text-sm md:text-base flex-grow leading-relaxed text-left transition-colors duration-300 group-hover:text-white">
                 {project.description}
               </p>
-              <div className="flex items-center gap-1 md:gap-2 overflow-x-auto scrollbar-none py-2 text-left">
+              <div className="flex items-center gap-1 md:gap-2 overflow-x-auto scrollbar-none py-2 text-left mt-2">
                 {project.technologies.map((tech, techIndex) => (
                   <span
                     key={tech}
