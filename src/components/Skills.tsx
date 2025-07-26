@@ -42,16 +42,16 @@ const Skills: React.FC<SkillsProps> = ({ skills }) => {
   }, [skills]);
 
   return (
-    <div id="skills" className="relative w-full overflow-hidden bg-jarvis-bg py-8 md:py-12 px-2 sm:px-6 md:px-8">
+    <div id="skills" className="relative w-full overflow-hidden bg-jarvis-bg py-8 md:py-12 px-4 sm:px-6 md:px-8">
       <div className="w-full flex flex-col items-center md:items-center mb-4 md:mb-6">
-        <h1 className="font-orbitron capitalize text-jarvis-accent text-lg sm:text-xl md:text-2xl mb-2 md:mb-4 text-shadow-neon font-bold text-center w-full animate-fade-in">
+        <h1 className="font-orbitron capitalize text-jarvis-accent text-shadow-neon text-2xl md:text-3xl font-bold text-center mb-6 animate-fade-in">
           Skills
         </h1>
       </div>
       <div className="flex flex-col gap-8 md:gap-10 w-full">
         {Object.entries(skills).map(([category, skillList], categoryIndex) => (
           <div key={category} className="w-full animate-fade-in-up" style={{ animationDelay: `${categoryIndex * 150}ms` }}>
-            <h2 className="font-orbitron text-jarvis-accent text-[8px] sm:text-[10px] md:text-lg mb-3 md:mb-4 text-left font-medium tracking-wide capitalize animate-fade-in" style={{ animationDelay: `${categoryIndex * 150 + 100}ms` }}>
+            <h2 className="font-orbitron text-jarvis-accent text-lg md:text-xl font-semibold mb-2 text-left tracking-wide capitalize animate-fade-in" style={{ animationDelay: `${categoryIndex * 150 + 100}ms` }}>
               {categoryLabels[category] || category}
             </h2>
             <div className="w-full overflow-x-auto scrollbar-none">

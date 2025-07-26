@@ -14,9 +14,9 @@ type ProjectsProps = {
 };
 
 const Projects: React.FC<ProjectsProps> = ({ projects }) => (
-  <section id="projects" className="min-h-screen w-full flex flex-col items-center justify-center py-8 md:py-16 px-2 sm:px-6 md:px-8 bg-jarvis-bg">
+  <section id="projects" className="min-h-screen w-full flex flex-col items-center justify-center py-8 md:py-16 px-4 sm:px-6 md:px-8 bg-jarvis-bg">
     <div className="max-w-6xl mx-auto w-full">
-      <h2 className="font-orbitron text-jarvis-accent text-shadow-neon text-lg sm:text-xl md:text-2xl text-center mb-6 md:mb-12 font-bold w-full animate-fade-in">
+      <h2 className="font-orbitron text-jarvis-accent text-shadow-neon text-xl sm:text-2xl md:text-3xl font-bold text-center mb-6 animate-fade-in">
         Projects
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10 lg:gap-20">
@@ -26,20 +26,22 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => (
             href={project.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex flex-col bg-jarvis-bg2 rounded-lg h-full border border-jarvis-accent/20 hover:border-jarvis-accent/50 transition-all duration-500 shadow-neon font-techmono mx-1 sm:mx-2 md:mx-4 hover:scale-105 hover:shadow-[0_0_30px_rgba(156,229,231,0.4)] animate-fade-in-up"
+            tabIndex={0}
+            className="group flex flex-col bg-jarvis-bg2 rounded-2xl h-full md:h-[500px] lg:h-[540px] border border-jarvis-accent/20 hover:border-jarvis-accent/50 focus:border-jarvis-accent transition-all duration-300 shadow-neon font-techmono mx-1 sm:mx-2 md:mx-4 hover:-translate-y-1 hover:scale-105 hover:shadow-[0_0_40px_rgba(156,229,231,0.5)] focus:shadow-[0_0_20px_rgba(156,229,231,0.3)] animate-fade-in-up"
             style={{ animationDelay: `${index * 200}ms` }}
           >
-            <div className="aspect-video w-full relative overflow-hidden rounded-t-lg">
+            <div className="aspect-video w-full relative overflow-hidden rounded-t-2xl bg-jarvis-bg2">
               <img 
                 src={project.image} 
                 alt={project.name}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 bg-jarvis-bg2"
+                style={{ backgroundColor: '#10151a' }}
               />
               <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-300"></div>
             </div>
             <div className="p-2 sm:p-3 md:p-4 flex flex-col flex-grow space-y-2 md:space-y-3 font-techmono text-left">
               <div className="flex items-center justify-between">
-                <h3 className="text-[9px] sm:text-xs md:text-lg font-orbitron font-bold text-jarvis-accent text-shadow-neon text-left tracking-tight transition-all duration-300 group-hover:text-jarvis-secondary">
+                <h3 className="font-orbitron text-jarvis-accent text-base sm:text-lg md:text-xl font-semibold mb-2 text-shadow-neon text-left tracking-tight transition-all duration-300 group-hover:text-jarvis-secondary">
                   {project.name}
                 </h3>
                 <div className="flex items-center gap-1 sm:gap-2 md:gap-3">
@@ -79,8 +81,9 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => (
                 {project.technologies.map((tech, techIndex) => (
                   <span
                     key={tech}
-                    className="px-1.5 sm:px-2 py-0.5 rounded-full whitespace-nowrap cursor-default font-techmono text-[8px] sm:text-xs md:text-sm bg-jarvis-bg2 border border-jarvis-accent/40 text-jarvis-accent shadow-neon text-left transition-all duration-300 hover:border-jarvis-accent hover:shadow-[0_0_15px_rgba(156,229,231,0.6)] hover:scale-105 animate-fade-in"
+                    className="px-1.5 sm:px-2 py-1 rounded-full whitespace-nowrap cursor-default font-techmono text-xs sm:text-sm md:text-base bg-jarvis-bg2 border border-jarvis-accent/40 text-jarvis-accent shadow-neon text-left transition-all duration-300 hover:border-jarvis-accent hover:shadow-[0_0_15px_rgba(156,229,231,0.6)] hover:scale-105 focus:border-jarvis-accent focus:shadow-[0_0_10px_rgba(156,229,231,0.4)] animate-fade-in min-h-[32px] min-w-[32px] flex items-center justify-center"
                     style={{ animationDelay: `${(index * 200) + (techIndex * 50)}ms` }}
+                    tabIndex={0}
                   >
                     {tech}
                   </span>

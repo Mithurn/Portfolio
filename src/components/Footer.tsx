@@ -25,7 +25,7 @@ const Footer = ({ copyrightRef }: { copyrightRef: React.Ref<HTMLParagraphElement
           <div className="space-y-4">
             <h3 className="font-orbitron text-jarvis-accent text-[8px] sm:text-xs md:text-base mb-4 -ml-1 text-left font-bold tracking-wide uppercase text-shadow-neon">Contact</h3>
             <div className="space-y-3 gap-2 text-left">
-              <a href="https://www.linkedin.com/in/mithurn-jeromme-s-k" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-white transition-all duration-200 justify-start group">
+              <a href="https://www.linkedin.com/in/mithurn-jeromme-s-k" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-white transition-all duration-200 justify-start group hover:text-jarvis-accent hover:text-shadow-neon hover:scale-105 focus:text-jarvis-accent">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
                   <rect width="4" height="12" x="2" y="9"></rect>

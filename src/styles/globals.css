@@ -488,3 +488,12 @@ a:focus {
   100% { transform: translateX(-50%); }
 }
 .marquee:hover, .marquee:active { animation-play-state: paused; }
+
+.section-divider {
+  width: 80%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #9CE5E7 60%, transparent);
+  box-shadow: 0 0 8px 0 #9CE5E733;
+  border-radius: 2px;
+  opacity: 0.5;
+}

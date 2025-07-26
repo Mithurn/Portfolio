@@ -12,6 +12,7 @@ import { SiJavascript, SiTypescript, SiNextdotjs, SiTailwindcss, SiNodedotjs, Si
 import PlatformIOIcon from '../components/PlatformIOIcon';
 import VSCodeIcon from '../components/VSCodeIcon';
 import React, { useRef, useEffect, useState } from 'react';
+import SectionFadeIn from '../components/SectionFadeIn';
 
 /** Add this to the top of the file or in your global CSS for flicker/scanline effect */
 const navTooltipClass = `
@@ -248,16 +249,11 @@ export default function Home() {
       <Hero />
 
       {/* About Section */}
-      <WhoAmI />
-
-      {/* Skills Section */}
-      <Skills skills={skills} />
-
-      {/* History Section */}
-      <Experience workHistory={workHistory} />
-
-      {/* Projects Section */}
-      <Projects projects={projects} />
+      <SectionFadeIn><WhoAmI /></SectionFadeIn>
+      <SectionFadeIn><Skills skills={skills} /></SectionFadeIn>
+      <SectionFadeIn><Experience workHistory={workHistory} /></SectionFadeIn>
+      <SectionFadeIn><Projects projects={projects} /></SectionFadeIn>
+      <div className="section-divider mx-auto my-8 md:my-12" />
 
       {/* Navigation Dock (pios-eight.vercel.app style) */}
       <div className={`fixed bottom-0 left-0 right-0 z-50 ${footerVisible ? 'hidden' : ''}`}>
@@ -266,10 +262,18 @@ export default function Home() {
             {navIcons.map(({ section, icon }) => (
               <div
                 key={section}
-                className="relative inline-flex items-center justify-center rounded-2xl bg-[#060606] border-[#9CE5E7] border-2 shadow-md cursor-pointer transition-all duration-300 w-[50px] h-[50px] overflow-hidden"
+                tabIndex={0}
+                className="relative inline-flex items-center justify-center rounded-2xl bg-[#060606] border-[#9CE5E7] border-2 shadow-md cursor-pointer transition-all duration-300 w-[50px] h-[50px] overflow-hidden min-h-[44px] min-w-[44px] focus:outline-none focus:ring-2 focus:ring-jarvis-accent focus:ring-offset-2 focus:ring-offset-black"
                 onClick={() => {
                   setActiveSection(section);
                   document.getElementById(section)?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    setActiveSection(section);
+                    document.getElementById(section)?.scrollIntoView({ behavior: 'smooth' });
+                  }
                 }}
               >
                 <div className="flex items-center justify-center w-full h-full">

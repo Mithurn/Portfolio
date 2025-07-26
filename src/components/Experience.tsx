@@ -15,8 +15,8 @@ type ExperienceProps = {
 };
 
 const Experience: React.FC<ExperienceProps> = ({ workHistory }) => (
-  <div id="history" className="min-h-screen flex flex-col items-center py-8 px-2 sm:px-6 md:px-8 bg-jarvis-bg">
-    <h1 className="font-orbitron text-jarvis-accent text-shadow-neon text-lg sm:text-xl md:text-2xl mb-6 md:mb-8 font-bold text-center w-full animate-fade-in">
+  <div id="history" className="min-h-screen flex flex-col items-center py-8 px-4 sm:px-6 md:px-8 bg-jarvis-bg">
+    <h1 className="font-orbitron text-jarvis-accent text-shadow-neon text-xl sm:text-2xl md:text-3xl font-bold text-center mb-6 animate-fade-in">
       History
     </h1>
     <div className="w-full max-w-7xl space-y-8 md:space-y-16">
@@ -32,8 +32,8 @@ const Experience: React.FC<ExperienceProps> = ({ workHistory }) => (
                 <img src={job.image} alt={typeof job.company === 'string' ? job.company : undefined} className="h-10 md:h-24 w-auto object-contain mb-1 md:mb-2 rounded shadow transition-transform duration-300 hover:scale-105" />
               )}
               <div className="text-jarvis-accent font-orbitron text-center text-shadow-neon w-full">
-                <div className="font-bold text-sm sm:text-base md:text-lg font-orbitron text-jarvis-accent text-shadow-neon text-center w-full">{job.company}</div>
-                <div className="font-bold text-sm sm:text-base md:text-lg font-orbitron text-jarvis-text text-center w-full">{job.role}</div>
+                <div className="font-semibold text-base sm:text-lg md:text-xl font-orbitron text-jarvis-accent text-shadow-neon text-center w-full">{job.company}</div>
+                <div className="font-semibold text-base sm:text-lg md:text-xl font-orbitron text-jarvis-text text-center w-full">{job.role}</div>
               </div>
             </div>
           </div>
@@ -70,7 +70,7 @@ const Experience: React.FC<ExperienceProps> = ({ workHistory }) => (
                   {job.technologies.map((tech, techIndex) => (
                     <span
                       key={tech}
-                      className="px-1.5 sm:px-2 md:px-4 py-0.5 md:py-1.5 rounded-full cursor-default font-techmono bg-jarvis-bg2 border border-jarvis-accent/40 text-jarvis-accent text-[8px] sm:text-xs md:text-sm shadow-neon text-left transition-all duration-300 hover:border-jarvis-accent hover:shadow-[0_0_15px_rgba(156,229,231,0.6)] hover:scale-105 animate-fade-in"
+                      className="px-1.5 sm:px-2 md:px-4 py-0.5 md:py-1.5 rounded-full cursor-default font-techmono bg-jarvis-bg2 border border-jarvis-accent/40 text-jarvis-accent text-xs sm:text-sm md:text-base shadow-neon text-left transition-all duration-300 hover:border-jarvis-accent hover:shadow-[0_0_15px_rgba(156,229,231,0.6)] hover:scale-105 animate-fade-in"
                       style={{ animationDelay: `${(index * 200) + (techIndex * 30)}ms` }}
                     >
                       {tech}

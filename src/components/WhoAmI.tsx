@@ -2,14 +2,14 @@ import React from 'react';
 import JarvisHologram from './JarvisHologram';
 
 const WhoAmI = () => (
-  <div id="about" className="min-h-screen flex flex-col md:flex-row items-center justify-center gap-8 md:gap-10 py-8 md:py-16 px-2 sm:px-6 md:px-8 bg-jarvis-bg">
+  <div id="about" className="min-h-screen flex flex-col md:flex-row items-center justify-center gap-8 md:gap-10 py-8 md:py-16 px-4 sm:px-6 md:px-8 bg-jarvis-bg">
     <div className="w-full md:w-[50%] h-48 md:h-[40rem] mb-6 md:mb-0 flex items-center justify-center animate-fade-in-up">
       <div className="relative w-full h-full bg-jarvis-bg2 rounded-lg overflow-hidden shadow-neon transition-all duration-500 hover:shadow-[0_0_30px_rgba(156,229,231,0.4)]">
         <JarvisHologram />
       </div>
     </div>
     <div className="w-full md:w-[60%] space-y-4 md:space-y-6 font-techmono px-2 md:px-4 text-left animate-fade-in-up" style={{ animationDelay: '200ms' }}>
-      <h1 className="font-orbitron capitalize text-jarvis-accent text-lg sm:text-xl md:text-2xl mb-4 md:mb-6 text-shadow-neon font-bold text-center w-full animate-fade-in">
+      <h1 className="font-orbitron capitalize text-jarvis-accent text-shadow-neon text-2xl md:text-3xl font-bold text-center mb-6 animate-fade-in">
         Who am i
       </h1>
       <div className="space-y-3 md:space-y-4">
@@ -34,7 +34,7 @@ const WhoAmI = () => (
           href="/resume/Mithurn_s_Resume.pdf" 
           target="_blank"
           className="inline-block w-auto px-3 py-2 md:px-4 md:py-2 bg-transparent text-jarvis-accent border border-jarvis-accent font-orbitron 
-                   hover:bg-jarvis-accent hover:text-jarvis-bg2 hover:shadow-[0_0_20px_rgba(156,229,231,0.6)] hover:scale-105 transition-all duration-300 rounded-md text-[9px] sm:text-xs md:text-base shadow-neon text-left"
+                   hover:bg-jarvis-accent hover:text-jarvis-bg2 hover:shadow-[0_0_20px_rgba(156,229,231,0.6)] hover:scale-105 focus:scale-105 transition-all transition-transform duration-300 rounded-md text-[9px] sm:text-xs md:text-base shadow-neon text-left focus-visible:ring-2 focus-visible:ring-jarvis-accent min-h-[44px] min-w-[44px] flex items-center justify-center"
         >
           Download Resume
         </a>
