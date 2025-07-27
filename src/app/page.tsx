@@ -86,18 +86,6 @@ export default function Home() {
         'Delivered highly functional, visually appealing websites tailored to client needs, improving their online presence and operational workflows'
       ],
       technologies: ['Next.js', 'Node.js', 'PostgreSQL', 'Tailwind CSS']
-    },
-    {
-      company: <span className="font-bold text-sm sm:text-base md:text-lg">HackOrbit National Hackathon</span>,
-      role: <span className="font-bold text-sm sm:text-base md:text-lg">Team Lead — Final Round</span>,
-      period: 'Jul 2025',
-      location: 'India',
-      image: '/images/farmer-bot.png',
-      achievements: [
-        'Led my team to develop an AI-powered bot aimed at preventing farmer suicides, integrating NLP and image diagnosis systems',
-        'Managed project architecture, task distribution, and final pitch to judges; reached final round among top national teams'
-      ],
-      technologies: ['AI/ML', 'NLP', 'Computer Vision', 'Python']
     }
   ];
 

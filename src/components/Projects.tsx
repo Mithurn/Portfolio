@@ -77,11 +77,11 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => (
               <p className="text-gray-300 font-techmono text-xs sm:text-sm md:text-base flex-grow leading-relaxed text-left transition-colors duration-300 group-hover:text-white">
                 {project.description}
               </p>
-              <div className="flex items-center gap-1 md:gap-2 overflow-x-auto scrollbar-none py-2 text-left mt-2">
+              <div className="flex flex-wrap items-center gap-1.5 md:gap-2 py-2 text-left mt-2">
                 {project.technologies.map((tech, techIndex) => (
                   <span
                     key={tech}
-                    className="px-1.5 sm:px-2 py-1 rounded-full whitespace-nowrap cursor-default font-techmono text-xs sm:text-sm md:text-base bg-jarvis-bg2 border border-jarvis-accent/40 text-jarvis-accent shadow-neon text-left transition-all duration-300 hover:border-jarvis-accent hover:shadow-[0_0_15px_rgba(156,229,231,0.6)] hover:scale-105 focus:border-jarvis-accent focus:shadow-[0_0_10px_rgba(156,229,231,0.4)] animate-fade-in min-h-[32px] min-w-[32px] flex items-center justify-center"
+                    className="px-2 sm:px-3 py-1.5 rounded-full whitespace-nowrap cursor-default font-techmono text-xs sm:text-sm md:text-base bg-jarvis-bg2 border border-jarvis-accent/40 text-jarvis-accent shadow-neon text-left transition-all duration-300 hover:border-jarvis-accent hover:shadow-[0_0_15px_rgba(156,229,231,0.6)] hover:scale-105 focus:border-jarvis-accent focus:shadow-[0_0_10px_rgba(156,229,231,0.4)] animate-fade-in min-h-[28px] flex items-center justify-center"
                     style={{ animationDelay: `${(index * 200) + (techIndex * 50)}ms` }}
                     tabIndex={0}
                   >

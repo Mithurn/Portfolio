@@ -481,13 +481,19 @@ a:focus {
 
 .marquee {
   display: flex;
-  animation: marquee 18s linear infinite;
+  animation: marquee 20s linear infinite;
+  will-change: transform;
 }
 @keyframes marquee {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
-.marquee:hover, .marquee:active { animation-play-state: paused; }
+.marquee:hover, .marquee:active { 
+  animation-play-state: paused; 
+}
+.marquee > * {
+  flex-shrink: 0;
+}
 
 .section-divider {
   width: 80%;
