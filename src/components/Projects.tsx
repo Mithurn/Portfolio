@@ -14,12 +14,12 @@ type ProjectsProps = {
 };
 
 const Projects: React.FC<ProjectsProps> = ({ projects }) => (
-  <section id="projects" className="min-h-screen w-full flex flex-col items-center justify-center py-8 md:py-16 px-4 sm:px-6 md:px-8 bg-jarvis-bg">
+  <section id="projects" className="min-h-screen w-full flex flex-col items-center justify-center py-8 md:py-16 px-4 sm:px-6 md:px-8 bg-black">
     <div className="max-w-6xl mx-auto w-full">
       <h2 className="font-orbitron text-jarvis-accent text-shadow-neon text-xl sm:text-2xl md:text-3xl font-bold text-center mb-6 animate-fade-in">
         Projects
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10 lg:gap-20">
+      <div className="flex flex-col gap-8 md:gap-10 lg:gap-12">
         {projects.map((project, index) => (
           <a
             key={index}
@@ -27,10 +27,10 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => (
             target="_blank"
             rel="noopener noreferrer"
             tabIndex={0}
-            className="group flex flex-col bg-jarvis-bg2 rounded-2xl h-full md:h-[500px] lg:h-[540px] border border-jarvis-accent/20 hover:border-jarvis-accent/50 focus:border-jarvis-accent transition-all duration-300 shadow-neon font-techmono mx-1 sm:mx-2 md:mx-4 hover:-translate-y-1 hover:scale-105 hover:shadow-[0_0_40px_rgba(156,229,231,0.5)] focus:shadow-[0_0_20px_rgba(156,229,231,0.3)] animate-fade-in-up"
+            className="group flex flex-col md:flex-row bg-jarvis-bg2 rounded-2xl h-full md:h-[300px] lg:h-[350px] border border-jarvis-accent/20 hover:border-jarvis-accent/50 focus:border-jarvis-accent transition-all duration-500 shadow-neon font-techmono hover:-translate-y-2 hover:scale-[1.02] hover:shadow-[0_0_50px_rgba(156,229,231,0.6)] focus:shadow-[0_0_20px_rgba(156,229,231,0.3)] animate-fade-in-up animate-float animate-glow-border transform-gpu"
             style={{ animationDelay: `${index * 200}ms` }}
           >
-            <div className="aspect-video w-full relative overflow-hidden rounded-t-2xl bg-jarvis-bg2">
+            <div className="h-64 sm:h-72 md:h-full md:w-1/2 relative overflow-hidden rounded-t-2xl md:rounded-r-none bg-jarvis-bg2">
               <img 
                 src={project.image} 
                 alt={project.name}
@@ -39,7 +39,7 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => (
               />
               <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-300"></div>
             </div>
-            <div className="p-2 sm:p-3 md:p-4 flex flex-col flex-grow space-y-2 md:space-y-3 font-techmono text-left">
+            <div className="p-3 sm:p-4 md:p-6 flex flex-col flex-grow space-y-2 md:space-y-3 font-techmono text-left md:w-1/2">
               <div className="flex items-center justify-between">
                 <h3 className="font-orbitron text-jarvis-accent text-base sm:text-lg md:text-xl font-semibold mb-2 text-shadow-neon text-left tracking-tight transition-all duration-300 group-hover:text-jarvis-secondary">
                   {project.name}

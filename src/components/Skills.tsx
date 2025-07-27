@@ -22,7 +22,7 @@ const categoryLabels: { [key: string]: string } = {
 
 const Skills: React.FC<SkillsProps> = ({ skills }) => {
   return (
-    <div id="skills" className="relative w-full bg-jarvis-bg py-8 md:py-12 px-4 sm:px-6 md:px-8">
+    <div id="skills" className="relative w-full bg-black py-8 md:py-12 px-4 sm:px-6 md:px-8">
       <div className="w-full flex flex-col items-center mb-6 md:mb-8">
         <h1 className="font-orbitron capitalize text-jarvis-accent text-shadow-neon text-2xl md:text-3xl font-bold text-center mb-6 animate-fade-in">
           Skills

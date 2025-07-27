@@ -503,3 +503,16 @@ a:focus {
   border-radius: 2px;
   opacity: 0.5;
 }
+
+.animate-glow-border {
+  animation: glow-border 3s ease-in-out infinite alternate;
+}
+
+@keyframes glow-border {
+  0% {
+    box-shadow: 0 0 5px rgba(156, 229, 231, 0.3), 0 0 10px rgba(156, 229, 231, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(156, 229, 231, 0.6), 0 0 30px rgba(156, 229, 231, 0.4);
+  }
+}

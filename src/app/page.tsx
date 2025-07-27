@@ -247,14 +247,39 @@ export default function Home() {
       <div className={`fixed bottom-0 left-0 right-0 z-50 ${footerVisible ? 'hidden' : ''}`}>
         <div className="mx-2 flex max-w-full items-center" style={{height: '64px'}}>
           <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex items-end w-fit gap-4 rounded-2xl border-jarvis-accent/30 border-2 pb-2 px-4 shadow-lg bg-black/40 backdrop-blur-lg" role="toolbar" aria-label="Application dock" style={{height: '64px'}}>
+            {/* Tooltip Container - Positioned above the dock */}
+            <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-black border border-jarvis-accent rounded-lg text-jarvis-accent text-xs font-techmono opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap z-[60] shadow-[0_0_20px_rgba(156,229,231,0.3)]">
+              <span id="tooltip-text">About Me</span>
+              <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-black"></div>
+            </div>
             {navIcons.map(({ section, icon }) => (
               <div
                 key={section}
                 tabIndex={0}
-                className="relative inline-flex items-center justify-center rounded-2xl bg-[#060606] border-[#9CE5E7] border-2 shadow-md cursor-pointer transition-all duration-300 w-[50px] h-[50px] overflow-hidden min-h-[44px] min-w-[44px] focus:outline-none focus:ring-2 focus:ring-jarvis-accent focus:ring-offset-2 focus:ring-offset-black"
+                className="relative inline-flex items-center justify-center rounded-2xl bg-[#060606] border-[#9CE5E7] border-2 shadow-md cursor-pointer transition-all duration-300 w-[50px] h-[50px] overflow-hidden min-h-[44px] min-w-[44px] focus:outline-none focus:ring-2 focus:ring-jarvis-accent focus:ring-offset-2 focus:ring-offset-black group"
                 onClick={() => {
                   setActiveSection(section);
                   document.getElementById(section)?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                onMouseEnter={() => {
+                  const tooltipText = document.getElementById('tooltip-text');
+                  const tooltip = tooltipText?.parentElement;
+                  if (tooltipText && tooltip) {
+                    tooltipText.textContent = 
+                      section === 'about' ? 'About Me' :
+                      section === 'skills' ? 'Skills & Tech' :
+                      section === 'history' ? 'Experience' :
+                      section === 'projects' ? 'Projects' : '';
+                    tooltip.classList.remove('opacity-0');
+                    tooltip.classList.add('opacity-100');
+                  }
+                }}
+                onMouseLeave={() => {
+                  const tooltip = document.getElementById('tooltip-text')?.parentElement;
+                  if (tooltip) {
+                    tooltip.classList.remove('opacity-100');
+                    tooltip.classList.add('opacity-0');
+                  }
                 }}
                 onKeyDown={(e) => {
                   if (e.key === 'Enter' || e.key === ' ') {
@@ -264,6 +289,7 @@ export default function Home() {
                   }
                 }}
               >
+
                 <div className="flex items-center justify-center w-full h-full">
                   <span className="transition-all duration-200" style={{color: activeSection === section ? '#9CE5E7' : '#fff'}}>
                     {icon}
