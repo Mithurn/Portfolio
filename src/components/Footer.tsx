@@ -33,12 +33,7 @@ const Footer = ({ copyrightRef }: { copyrightRef: React.Ref<HTMLParagraphElement
                 </svg>
                 <span className="font-techmono text-body text-xs sm:text-sm md:text-base tracking-wide">Mithurn Jeromme</span>
               </a>
-              <a href="tel:+91-8056687515" className="flex items-center space-x-2 text-white transition-all duration-200 justify-start group hover:text-jarvis-accent hover:text-shadow-neon hover:scale-105 focus:text-jarvis-accent">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                </svg>
-                <span className="font-techmono text-body group-hover:text-jarvis-accent group-hover:text-shadow-neon group-hover:scale-105 transition-all duration-200 text-xs sm:text-sm md:text-base tracking-wide">+91-8056687515</span>
-              </a>
+
               <a href="https://github.com/Mithurn" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-white transition-all duration-200 justify-start group hover:text-jarvis-accent hover:text-shadow-neon hover:scale-105 focus:text-jarvis-accent">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
@@ -56,7 +51,7 @@ const Footer = ({ copyrightRef }: { copyrightRef: React.Ref<HTMLParagraphElement
             </div>
           </div>
           <div className="flex items-start md:justify-end">
-            <div className="md:w-52 w-44 h-52 md:shadow-[0_0_15px_0_rgba(156,229,231,0.3)] backdrop-blur-sm p-4 transition-colors relative flex flex-col justify-center items-start font-techmono">
+            <div className="md:w-64 w-52 h-52 md:shadow-[0_0_15px_0_rgba(156,229,231,0.3)] backdrop-blur-sm p-4 transition-colors relative flex flex-col justify-center items-start font-techmono">
               <AnimatedFooterTerminal />
             </div>
           </div>
@@ -76,7 +71,7 @@ function AnimatedFooterTerminal() {
     { cmd: 'skills', out: 'JS, Python, C++, Next.js, ML, CV' },
     { cmd: 'projects', out: 'AI Medical Car, Krishi Rakshak, Prompter AI' },
     { cmd: 'mywork', out: 'Upwork, HackOrbit Finalist' },
-    { cmd: 'contact', out: '+91-8056687515' },
+    { cmd: 'contact', out: 'mithurnjeromme172@email.com' },
   ];
   const [index, setIndex] = useState(0);
   const [typedCmd, setTypedCmd] = useState('');

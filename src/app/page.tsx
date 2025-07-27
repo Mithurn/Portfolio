@@ -297,7 +297,7 @@ function AnimatedFooterTerminal() {
     { cmd: 'skills', out: 'JS, Python, C++, Next.js, ML, CV' },
     { cmd: 'projects', out: 'AI Medical Car, Krishi Rakshak, Prompter AI' },
     { cmd: 'mywork', out: 'Upwork, HackOrbit Finalist' },
-    { cmd: 'contact', out: '+91-8056687515' },
+    { cmd: 'contact', out: 'mithurnjeromme172@email.com' },
   ];
   const [index, setIndex] = useState(0);
   const [typedCmd, setTypedCmd] = useState('');
