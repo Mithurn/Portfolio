@@ -2,7 +2,7 @@ import React from 'react';
 
 type Skill = {
   name: string;
-  icon: React.ReactNode;
+  icon: React.ReactNode | string;
 };
 
 type SkillsCategory = {
@@ -38,11 +38,15 @@ const Skills: React.FC<SkillsProps> = ({ skills }) => {
               {skillList.map((skill, index) => (
                 <div 
                   key={index} 
-                  className="group flex flex-col items-center justify-center p-3 md:p-4 font-techmono animate-fade-in bg-jarvis-bg2 border border-jarvis-accent/20 rounded-lg hover:border-jarvis-accent/50 hover:shadow-[0_0_20px_rgba(156,229,231,0.3)] transition-all duration-300"
+                  className="group flex flex-col items-center justify-center p-3 md:p-4 font-techmono animate-fade-in transition-all duration-300"
                   style={{ animationDelay: `${categoryIndex * 150 + (index * 50)}ms` }}
                 >
                   <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-jarvis-bg2 border border-jarvis-accent/40 rounded-lg flex items-center justify-center group-hover:scale-110 group-hover:border-jarvis-accent group-hover:shadow-[0_0_20px_rgba(156,229,231,0.4)] transition-all duration-300 shadow-neon text-lg sm:text-xl md:text-2xl mb-2 md:mb-3">
-                    {skill.icon}
+                    {typeof skill.icon === 'string' ? (
+                      <span className="font-bold text-white">{skill.icon}</span>
+                    ) : (
+                      skill.icon
+                    )}
                   </div>
                   <p className="text-jarvis-text group-hover:text-jarvis-accent transition-colors duration-300 font-roboto text-xs sm:text-sm md:text-base text-center font-medium">
                     {skill.name}

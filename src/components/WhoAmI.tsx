@@ -20,7 +20,7 @@ const WhoAmI = () => (
         <rect width="100%" height="100%" fill="url(#aboutGrid)" />
       </svg>
     </div>
-    <div className="w-full md:w-[45%] h-56 md:h-[35rem] mb-6 md:mb-0 flex items-center justify-center animate-fade-in-up">
+    <div className="w-full md:w-[45%] h-96 md:h-[40rem] mb-6 md:mb-0 flex items-center justify-center animate-fade-in-up relative">
       <JarvisHologram />
     </div>
     <div className="w-full md:w-[55%] space-y-4 md:space-y-6 font-techmono px-2 md:px-4 text-left animate-fade-in-up" style={{ animationDelay: '200ms' }}>

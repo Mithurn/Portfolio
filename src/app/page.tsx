@@ -46,7 +46,7 @@ export default function Home() {
       { name: 'Tailwind CSS', icon: <SiTailwindcss /> },
       { name: 'Node.js', icon: <SiNodedotjs /> },
       { name: 'PostgreSQL', icon: <SiPostgresql /> },
-      { name: 'SQL', icon: <span className="font-bold text-lg">SQL</span> },
+      { name: 'SQL', icon: 'SQL' },
     ],
     aiml: [
       { name: 'Python', icon: <SiPython /> },
