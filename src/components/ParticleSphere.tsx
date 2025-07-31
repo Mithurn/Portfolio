@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useMemo } from 'react';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js';
@@ -35,7 +35,13 @@ class Dot {
     this.targetPos = new THREE.Vector3();
   }
 
-  avoidMouse(mousePos: THREE.Vector3, settings: any) {
+  avoidMouse(mousePos: THREE.Vector3, settings: {
+    distanceAffection: number;
+    avoidanceFactor: number;
+    avoidRelativeToPivot: boolean;
+    countZAxisDirection: boolean;
+    toggleRotation: boolean;
+  }) {
     const dotGlobalPos = new THREE.Vector3();
     const pivotGlobalPos = new THREE.Vector3();
     this.mesh.getWorldPosition(dotGlobalPos);
@@ -100,13 +106,13 @@ const ParticleSphere: React.FC<ParticleSphereProps> = ({ className = '' }) => {
   const cursorPosRef = useRef<THREE.Vector3>(new THREE.Vector3());
   const animationIdRef = useRef<number | null>(null);
 
-  const settings = {
+  const settings = useMemo(() => ({
     distanceAffection: 8.0,
     avoidanceFactor: -15.0,
     avoidRelativeToPivot: true,
     countZAxisDirection: false,
     toggleRotation: true,
-  };
+  }), []);
 
   useEffect(() => {
     if (!mountRef.current) return;
@@ -269,8 +275,9 @@ const ParticleSphere: React.FC<ParticleSphereProps> = ({ className = '' }) => {
       document.removeEventListener('touchmove', onDocumentTouchMove);
       window.removeEventListener('resize', onWindowResize);
 
-      if (mountRef.current && renderer.domElement) {
-        mountRef.current.removeChild(renderer.domElement);
+      const currentMount = mountRef.current;
+      if (currentMount && renderer.domElement) {
+        currentMount.removeChild(renderer.domElement);
       }
 
       if (renderer) {
