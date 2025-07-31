@@ -153,7 +153,12 @@ const ParticleSphere: React.FC<ParticleSphereProps> = ({ className = '' }) => {
     const composer = new EffectComposer(renderer);
     const renderPass = new RenderPass(scene, camera);
     composer.addPass(renderPass);
-    const glowPass = new UnrealBloomPass();
+    const glowPass = new UnrealBloomPass(
+      new THREE.Vector2(window.innerWidth, window.innerHeight),
+      0.5,  // strength
+      0.4,  // radius
+      0.85  // threshold
+    );
     composer.addPass(glowPass);
     composerRef.current = composer;
 
@@ -284,7 +289,7 @@ const ParticleSphere: React.FC<ParticleSphereProps> = ({ className = '' }) => {
         renderer.dispose();
       }
     };
-  }, []);
+  }, [settings]);
 
   return (
     <div 
